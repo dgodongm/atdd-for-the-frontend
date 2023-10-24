@@ -30,9 +30,9 @@ jobs:
       - uses: romeovs/lcov-reporter-action@v0.2.19
         with:
           lcov-file: ./coverage/lcov.info
-          github: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Cypress run
-          uses: cypress-io/github-action@v4
-          with: 
-            start: npm start
-            wait-on: 'http://localhost:3000'
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm start
+          wait-on: "http://localhost:3000"
